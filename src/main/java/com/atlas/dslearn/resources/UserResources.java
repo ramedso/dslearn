@@ -17,7 +17,6 @@ public class UserResources {
     @Autowired
     private UserService userService;
 
-
     @GetMapping(value = "/{id}")
     public ResponseEntity<UserDTO> findById(@PathVariable Long id) throws ResourceNotFoundException {
         UserDTO userDTO = userService.findById(id);
