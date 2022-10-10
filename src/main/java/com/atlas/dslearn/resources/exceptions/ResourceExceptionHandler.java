@@ -1,7 +1,9 @@
 package com.atlas.dslearn.resources.exceptions;
 
 import com.atlas.dslearn.services.exceptions.DatabaseException;
+import com.atlas.dslearn.services.exceptions.ForbiddenException;
 import com.atlas.dslearn.services.exceptions.ResourceNotFoundException;
+import com.atlas.dslearn.services.exceptions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -54,4 +56,17 @@ public class ResourceExceptionHandler {
 
         return ResponseEntity.status(status).body(error);
     }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<OAuthCustomError> forbidden(ForbiddenException e, HttpServletRequest request) {
+        OAuthCustomError error = new OAuthCustomError("Forbidden", e.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+    }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<OAuthCustomError> unauthorized(ForbiddenException e, HttpServletRequest request) {
+        OAuthCustomError error = new OAuthCustomError("Unauthorized", e.getMessage());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+    }
+
 }
