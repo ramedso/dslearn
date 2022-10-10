@@ -2,6 +2,7 @@ package com.atlas.dslearn.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serial;
@@ -13,6 +14,7 @@ import java.util.Set;
 
 @Data
 @NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
@@ -31,7 +33,7 @@ public class User implements Serializable {
     @JoinTable(name = "tb_user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    private final Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications = new ArrayList<>();

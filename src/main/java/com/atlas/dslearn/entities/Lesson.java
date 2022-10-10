@@ -5,7 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -30,6 +32,10 @@ public abstract class Lesson implements Serializable {
     @ManyToOne
     @JoinColumn(name = "section_id")
     private Section section;
+
+    @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "lesson")
+    private final List<Deliver> deliveries = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "tb_lessons_done",

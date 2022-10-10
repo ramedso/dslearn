@@ -2,6 +2,7 @@ package com.atlas.dslearn.entities;
 
 import com.atlas.dslearn.entities.pk.EnrollmentPK;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 @Data
+@EqualsAndHashCode
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_enrollment")
