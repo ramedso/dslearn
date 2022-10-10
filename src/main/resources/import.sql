@@ -21,3 +21,7 @@ INSERT INTO tb_offer(edition, start_Moment, end_Moment, course_id) VALUES ('2.0'
 INSERT INTO tb_resource(title, description, position, img_Uri, type, offer_id) VALUES ('Track Fullstack', 'Main Track', 1, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 1, 1);
 INSERT INTO tb_resource(title, description, position, img_Uri, type, offer_id) VALUES ('FORUM', 'No Doubts!', 2, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 2, 1);
 INSERT INTO tb_resource(title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Exclusive lives', 3, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 0, 1);
+
+INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Cap. 1', 'We will learn form zero to hero!', 1, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 1, null);
+INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Cap. 2', 'We will learn form two to hero!', 2, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 1, 1);
+INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Cap. 3', 'We will learn form three to hero!', 3, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 1, 2);
