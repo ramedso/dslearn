@@ -8,7 +8,9 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -31,6 +33,9 @@ public class Enrollment implements Serializable {
 
    @ManyToMany(mappedBy = "enrollmentsDone")
    private Set<Lesson> lessonsDone = new HashSet<>();
+
+   @OneToMany(mappedBy = "enrollment")
+   private List<Deliver> delivers = new ArrayList<>();
 
    public Enrollment(User user, Offer offer, EnrollmentPK id, Instant enrollMoment, Instant refundMoment,
                      boolean available, boolean onlyUpdate) {
