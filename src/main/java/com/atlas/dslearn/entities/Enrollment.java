@@ -4,13 +4,12 @@ import com.atlas.dslearn.entities.pk.EnrollmentPK;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -29,6 +28,9 @@ public class Enrollment implements Serializable {
    private Instant refundMoment;
    private boolean available;
    private boolean onlyUpdate;
+
+   @ManyToMany(mappedBy = "enrollmentsDone")
+   private Set<Lesson> lessonsDone = new HashSet<>();
 
    public Enrollment(User user, Offer offer, EnrollmentPK id, Instant enrollMoment, Instant refundMoment,
                      boolean available, boolean onlyUpdate) {

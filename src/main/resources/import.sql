@@ -29,3 +29,18 @@ INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prere
 INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z', null, true, false);
 INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (2, 2, TIMESTAMP WITH TIME ZONE '2020-07-15T10:00:00Z', TIMESTAMP WITH TIME ZONE '2020-07-16T10:00:00Z', true, true);
 INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (3, 1, TIMESTAMP WITH TIME ZONE '2020-07-16T10:00:00Z', null, true, false);
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES ('Class 1, Cap. 1', 1, 1);
+INSERT INTO tb_content(id, text_Content, video_Uri) VALUES (1, 'Material: abc', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES ('Class 2, Cap. 1', 2, 1);
+INSERT INTO tb_content(id, text_Content, video_Uri) VALUES (2, 'Material: abc', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES ('Class 3, Cap. 1', 3, 1);
+INSERT INTO tb_content(id, text_Content, video_Uri) VALUES (3, 'Material: abc', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES ('Cap. 1 - Task', 4, 1);
+INSERT INTO tb_task(id, description, question_Count, approval_Count, weight, due_Date) VALUES (4, 'Task for learn', 5, 4, 1.0, TIMESTAMP WITH TIME ZONE '2020-07-25T10:00:00Z');
+
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (2, 1, 1);
