@@ -25,3 +25,7 @@ INSERT INTO tb_resource(title, description, position, img_Uri, type, offer_id) V
 INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Cap. 1', 'We will learn form zero to hero!', 1, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 1, null);
 INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Cap. 2', 'We will learn form two to hero!', 2, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 1, 1);
 INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Cap. 3', 'We will learn form three to hero!', 3, 'https://www.ncertbooks.guru/wp-content/uploads/2022/05/Course-details.png', 1, 2);
+
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z', null, true, false);
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (2, 2, TIMESTAMP WITH TIME ZONE '2020-07-15T10:00:00Z', TIMESTAMP WITH TIME ZONE '2020-07-16T10:00:00Z', true, true);
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (3, 1, TIMESTAMP WITH TIME ZONE '2020-07-16T10:00:00Z', null, true, false);
